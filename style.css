@@ -1,7 +1,7 @@
 @import "compass/css3";
 body {
   background: white;
-  font-family: 'system-ui';
+  font-family: "system-ui";
   font-weight: 800;
   font-style: italic;
   letter-spacing: -1.5px;
@@ -11,9 +11,14 @@ body {
   font-size: 30px;
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 40%;
-  left: 50%;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
 }
+
+.glitch .layer {
+  position: absolute;
+}
+
 @keyframes noise-anim {
   0% {
     clip: rect(43px, 9999px, 46px, 0);
@@ -79,7 +84,7 @@ body {
     clip: rect(34px, 9999px, 14px, 0);
   }
 }
-.glitch:after {
+/* .glitch:after {
   content: attr(data-text);
   position: absolute;
   left: 2px;
@@ -90,7 +95,7 @@ body {
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim 2s infinite linear alternate-reverse;
-}
+} */
 @keyframes noise-anim-2 {
   0% {
     clip: rect(84px, 9999px, 52px, 0);
@@ -156,7 +161,8 @@ body {
     clip: rect(11px, 9999px, 67px, 0);
   }
 }
-.glitch:before {
+
+/* .glitch:before {
   content: attr(data-text);
   position: absolute;
   left: -2px;
@@ -167,4 +173,29 @@ body {
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 3s infinite linear alternate-reverse;
+} */
+
+.glitch .layer-2 {
+  left: 2px;
+  top: 0;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim 3s infinite linear alternate-reverse;
+  background-color: #fff;
+}
+.glitch .layer-2 > svg {
+  -webkit-filter: drop-shadow(-1px 1px rgba(23, 0, 255, 1));
+  filter: drop-shadow(-1px 1px rgba(23, 0, 255, 1));
+}
+
+.glitch .layer-3 {
+  left: -2px;
+  top: 0;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim-2 2s infinite linear alternate-reverse;
+}
+.glitch .layer-3 > svg {
+  -webkit-filter: drop-shadow(2px -1px rgba(255, 2, 0, 1));
+  filter: drop-shadow(2px -1px rgba(255, 2, 0, 1));
 }
